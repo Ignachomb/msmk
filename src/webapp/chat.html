@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  html, body {
+    padding: 0;
+  }
+    body{
+      display:flex;
+      flex-direction:column;
+    }
+    
+    #chat {
+      background-color: black;
+      min-height: 100px;
+    }
+     #chat-bar{
+      background-color: lightgreen;
+      min-height: 10px;
+       display:flex;
+       flexdirection:row;
+    }
+    #chat-input{
+      flex-grow: 1;
+      background-color: darkgray;
+      min-height: 10px;
+    }
+    #chat-send{
+      background-color: lightgreen;
+      min-height: 10px;
+    }
+
+    
+  </style>
+  <script>
+    
+function getChat(){
+  
+  fetch("endpoint/test-py")
+    .then(function(response) {
+      response.text()
+        .then(function(text) {
+          getOutput().innerHTML = text;
+        });
+    });
+}
+
+
+    
+  </script>
+    <title>sos tremendo gay si les esto</title>
+</head>
+<body>
+  <div id="chat-bar"> 
+    
+    <div id="chat-input" contenteditable="true"></div>
+
+    <div id="chat-send">Send</div>
+  
+  </div>
+ 
+  
+    <div id="chat"></div>
+</body>
+</html>
